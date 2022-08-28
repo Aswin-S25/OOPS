@@ -22,7 +22,7 @@ class triangle :public Shape
     void area()
     {
         int p = s+s1+s2;
-        float a = sqrt(s*(s1-1)*(s2-2));
+        float a = sqrt(s*(s-s1)*(s-s2));
         cout<<a<<endl;
     }
     void perimeter()
