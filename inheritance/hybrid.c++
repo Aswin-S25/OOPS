@@ -33,7 +33,7 @@ class float_numbers
         }
 };
 
-class addition : public int_numbers
+class addition :virtual public int_numbers
 {
     public:
     void add()
@@ -42,7 +42,7 @@ class addition : public int_numbers
     }
 };
 
-class substraction :  public int_numbers
+class substraction :virtual  public int_numbers
 {
     public:
     void sub()
@@ -51,7 +51,7 @@ class substraction :  public int_numbers
     }
 };
 
-class multiplication :  public float_numbers
+class multiplication : virtual public float_numbers
 {
     public:
     void multi()
@@ -60,7 +60,7 @@ class multiplication :  public float_numbers
     }
 };
 
-class division : public float_numbers
+class division :virtual public float_numbers
 {
     public:
     void div()
@@ -69,34 +69,42 @@ class division : public float_numbers
     }
 };
 
+class Arithematic :virtual public addition,virtual public substraction,virtual public multiplication,virtual public division
+{
+
+};
 int main()
 {
-    addition obj1;
-    substraction obj2;
-    multiplication obj3;
-    division obj4;
+    Arithematic a;
+    a.getdata();
+    a.display();
+    a.add();
+    // addition obj1;
+    // substraction obj2;
+    // multiplication obj3;
+    // division obj4;
 
-    obj1.getdata();
-    obj1.display();
-    obj1.add();
+    // obj1.getdata();
+    // obj1.display();
+    // obj1.add();
 
     cout<<"for substractuib\n";
 
-    obj2.getdata();
-    obj2.display();
-    obj2.sub();
+    a.getdata();
+    a.display();
+    a.sub();
 
     cout<<"for multiplication\n";
 
-    obj3.get();
-    obj3.dis();
-    obj3.multi();
+    a.get();
+    a.dis();
+    a.multi();
 
     cout<<"for substractuib\n";
 
-    obj4.get();
-    obj4.dis();
-    obj4.div();
+    a.get();
+    a.dis();
+    a.div();
 
     return 0;
 }
